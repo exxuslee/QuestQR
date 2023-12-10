@@ -2,8 +2,10 @@ package com.exxus.questqr.ui.navigation
 
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
+import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import androidx.navigation.navArgument
 import com.exxus.questqr.ui.screens.menu.MenuScreen
 import com.exxus.questqr.ui.screens.result.ResultScreen
 import com.exxus.questqr.ui.screens.scanner.ScannerScreen

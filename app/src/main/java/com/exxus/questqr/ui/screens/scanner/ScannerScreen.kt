@@ -33,7 +33,7 @@ import com.exxus.questqr.ui.dialogs.CameraRequiredDialog
 import com.exxus.questqr.ui.theme.*
 import kotlinx.coroutines.launch
 
-@OptIn(ExperimentalMaterialApi::class)
+    @OptIn(ExperimentalMaterialApi::class)
 @Composable
 fun ScannerScreen(
     navController: NavHostController,
