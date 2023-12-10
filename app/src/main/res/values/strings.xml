@@ -2,7 +2,7 @@
     <string name="app_name">Quest QR</string>
 
     <!-- Scan screen -->
-    <string name="scan_message">Focus a QR code or Barcode</string>
+    <string name="scan_message">Focus a QR code</string>
     <string name="scan_share_value">Share content</string>
     <string name="scan_value_copied">Content copied</string>
 

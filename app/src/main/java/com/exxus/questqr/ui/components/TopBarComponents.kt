@@ -8,6 +8,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.tooling.preview.Preview
@@ -17,33 +18,28 @@ import com.exxus.questqr.ui.theme.QuestQRTheme
 import com.exxus.questqr.R
 
 @Composable
-fun SimpleScannerTopBar() {
+fun TopBarComponents() {
     Box(
         contentAlignment = Alignment.Center,
         modifier = Modifier
             .fillMaxWidth()
             .height(90.dp)
             .background(
-                Brush.verticalGradient(
-                    colors = listOf(
-                        Black700,
-                        Color.Transparent)
-                )
+                Brush.verticalGradient(colors = listOf(Black700, Color.Transparent))
             )
     ) {
         Image(
-            imageVector = ImageVector.vectorResource(id = R.drawable.ic_simple_scanner),
+            imageVector = ImageVector.vectorResource(id = R.drawable.questqr),
             contentDescription = null,
-            modifier = Modifier
-                .requiredSize(56.dp)
+            modifier = Modifier.requiredSize(180.dp),
         )
     }
 }
 
 @Preview("Simple scanner top bar", showBackground = true)
 @Composable
-private fun SimpleScannerTopBarPreview() {
+private fun TopBarComponentsPreview() {
     QuestQRTheme {
-        SimpleScannerTopBar()
+        TopBarComponents()
     }
 }

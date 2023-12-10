@@ -12,7 +12,7 @@ import com.exxus.questqr.ui.screens.scanner.ScannerScreen
 fun SetupNavigation(navController: NavHostController) {
     NavHost(navController = navController, startDestination = Screen.Menu.route) {
         composable(Screen.Menu.route) { MenuScreen(navController) }
-        composable(Screen.Scanner.route) { ScannerScreen() }
+        composable(Screen.Scanner.route) { ScannerScreen(navController) }
         composable(Screen.Result.route) { ResultScreen(navController) }
     }
 }

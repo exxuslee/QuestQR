@@ -3,9 +3,7 @@ package com.exxus.questqr.ui.screens.scanner
 import android.Manifest
 import android.app.Activity
 import android.content.Context
-import android.content.Intent
 import android.content.pm.PackageManager
-import android.widget.Toast
 import androidx.activity.compose.BackHandler
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
@@ -22,15 +20,15 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.hapticfeedback.HapticFeedbackType
 import androidx.compose.ui.platform.*
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.viewinterop.AndroidView
 import androidx.core.content.ContextCompat
 import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.navigation.NavHostController
 import com.exxus.questqr.R
 import com.exxus.questqr.ui.components.ScanSheet
-import com.exxus.questqr.ui.components.SimpleScannerTopBar
+import com.exxus.questqr.ui.components.TopBarComponents
 import com.exxus.questqr.ui.dialogs.CameraRequiredDialog
 import com.exxus.questqr.ui.theme.*
 import kotlinx.coroutines.launch
@@ -38,6 +36,7 @@ import kotlinx.coroutines.launch
 @OptIn(ExperimentalMaterialApi::class)
 @Composable
 fun ScannerScreen(
+    navController: NavHostController,
     viewModel: ScannerViewModel = hiltViewModel()
 ) {
     val bottomSheetState = rememberModalBottomSheetState(initialValue = ModalBottomSheetValue.Hidden)
@@ -117,9 +116,6 @@ private fun ScannerScreen(
     uiState: ScannerUiState,
     context: Context
 ) {
-    val clipboardManager = LocalClipboardManager.current
-    val uriHandler = LocalUriHandler.current
-
     ModalBottomSheetLayout(
         sheetState = bottomSheetState,
         sheetShape = BottomSheetShape,
@@ -128,25 +124,6 @@ private fun ScannerScreen(
             uiState.scan?.let {
                 ScanSheet(
                     scan = it,
-                    onShareClicked = {
-                        context.startActivity(
-                            Intent.createChooser(
-                                Intent().apply {
-                                    action = Intent.ACTION_SEND
-                                    putExtra(Intent.EXTRA_TEXT, it.displayValue)
-                                    type = "text/plain"
-                                },
-                                context.getString(R.string.scan_share_value)
-                            )
-                        )
-                    },
-                    onCopyClicked = {
-                        clipboardManager.setText(AnnotatedString(it.displayValue))
-                        Toast.makeText(context, context.getText(R.string.scan_value_copied), Toast.LENGTH_SHORT).show()
-                    },
-                    onWebClicked = {
-                        uriHandler.openUri(it.displayValue)
-                    },
                     modifier = Modifier
                         .fillMaxWidth()
                         .padding(horizontal = BaseDP)
@@ -184,7 +161,7 @@ private fun ScannerScreen(
                     modifier = Modifier.padding(horizontal = BaseDP)
                 )
             }
-            SimpleScannerTopBar()
+            TopBarComponents()
         }
     }
 }
