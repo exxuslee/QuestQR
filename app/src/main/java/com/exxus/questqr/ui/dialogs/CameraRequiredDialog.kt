@@ -2,9 +2,9 @@ package com.exxus.questqr.ui.dialogs
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.*
-import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.Info
+import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -54,7 +54,7 @@ private fun CameraRequiredContent(
             )
             Text(
                 text = stringResource(id = R.string.camera_required_message),
-                style = MaterialTheme.typography.h6,
+                style = MaterialTheme.typography.bodyMedium,
                 fontWeight = FontWeight.Bold
             )
             Row(
@@ -64,17 +64,17 @@ private fun CameraRequiredContent(
                 OutlinedButton(
                     onClick = onExitClicked,
                     colors = ButtonDefaults.outlinedButtonColors(
-                        contentColor = MaterialTheme.colors.error
+                        contentColor = MaterialTheme.colorScheme.error
                     ),
                     border = BorderStroke(
                         width = 2.dp,
-                        color = MaterialTheme.colors.error
+                        color = MaterialTheme.colorScheme.error
                     ),
                     modifier = Modifier.weight(0.5f)
                 ) {
                     Text(
                         text = stringResource(id = R.string.camera_required_exit_btn),
-                        style = MaterialTheme.typography.body1,
+                        style = MaterialTheme.typography.bodyMedium,
                         fontWeight = FontWeight.SemiBold
                     )
                 }
@@ -87,7 +87,7 @@ private fun CameraRequiredContent(
                 ) {
                     Text(
                         text = stringResource(id = R.string.camera_required_continue_btn),
-                        style = MaterialTheme.typography.body1,
+                        style = MaterialTheme.typography.bodyMedium,
                         fontWeight = FontWeight.SemiBold
                     )
                 }

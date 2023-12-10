@@ -1,8 +1,8 @@
 package com.exxus.questqr.ui
 
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Surface
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.SideEffect
 import androidx.compose.ui.Modifier
@@ -13,7 +13,7 @@ import com.exxus.questqr.ui.theme.Black700
 import com.exxus.questqr.ui.theme.QuestQRTheme
 
 @Composable
-fun SimpleScannerApp() {
+fun QuestQRApp() {
     QuestQRTheme {
         val navController = rememberNavController()
         val systemUiController = rememberSystemUiController()
@@ -24,7 +24,7 @@ fun SimpleScannerApp() {
 
         Surface(
             modifier = Modifier.fillMaxSize(),
-            color = MaterialTheme.colors.background
+            color = MaterialTheme.colorScheme.background
         ) {
             SetupNavigation(navController = navController)
         }

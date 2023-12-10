@@ -5,9 +5,8 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material.Button
-import androidx.compose.material.ExperimentalMaterialApi
-import androidx.compose.material.Text
+import androidx.compose.material3.Button
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -21,8 +20,6 @@ import com.exxus.questqr.MyPreferences
 import com.exxus.questqr.ui.navigation.Screen
 import com.exxus.questqr.ui.theme.QuestQRTheme
 
-
-@OptIn(ExperimentalMaterialApi::class)
 @Composable
 fun MenuScreen(navController: NavHostController) {
     val context = LocalContext.current
