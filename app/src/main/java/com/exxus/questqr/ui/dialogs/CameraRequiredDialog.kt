@@ -17,7 +17,7 @@ import androidx.compose.ui.window.Dialog
 import androidx.compose.ui.window.DialogProperties
 import com.exxus.questqr.R
 import com.exxus.questqr.ui.theme.BaseDP
-import com.exxus.questqr.ui.theme.SimpleScannerTheme
+import com.exxus.questqr.ui.theme.QuestQRTheme
 
 @Composable
 fun CameraRequiredDialog(
@@ -99,7 +99,7 @@ private fun CameraRequiredContent(
 @Preview("Camera required dialog", showBackground = true)
 @Composable
 private fun CameraRequiredContentPreview() {
-    SimpleScannerTheme {
+    QuestQRTheme {
         CameraRequiredContent(
             onContinueClicked = {},
             onExitClicked = {}

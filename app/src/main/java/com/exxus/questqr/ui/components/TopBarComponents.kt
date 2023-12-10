@@ -13,7 +13,7 @@ import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.exxus.questqr.ui.theme.Black700
-import com.exxus.questqr.ui.theme.SimpleScannerTheme
+import com.exxus.questqr.ui.theme.QuestQRTheme
 import com.exxus.questqr.R
 
 @Composable
@@ -43,7 +43,7 @@ fun SimpleScannerTopBar() {
 @Preview("Simple scanner top bar", showBackground = true)
 @Composable
 private fun SimpleScannerTopBarPreview() {
-    SimpleScannerTheme {
+    QuestQRTheme {
         SimpleScannerTopBar()
     }
 }

@@ -7,13 +7,14 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.SideEffect
 import androidx.compose.ui.Modifier
 import androidx.navigation.compose.rememberNavController
+import com.exxus.questqr.ui.navigation.SetupNavigation
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
 import com.exxus.questqr.ui.theme.Black700
-import com.exxus.questqr.ui.theme.SimpleScannerTheme
+import com.exxus.questqr.ui.theme.QuestQRTheme
 
 @Composable
 fun SimpleScannerApp() {
-    SimpleScannerTheme {
+    QuestQRTheme {
         val navController = rememberNavController()
         val systemUiController = rememberSystemUiController()
 
@@ -25,7 +26,7 @@ fun SimpleScannerApp() {
             modifier = Modifier.fillMaxSize(),
             color = MaterialTheme.colors.background
         ) {
-            SimpleScannerNavGraph(navController = navController)
+            SetupNavigation(navController = navController)
         }
     }
 }

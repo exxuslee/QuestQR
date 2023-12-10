@@ -20,7 +20,7 @@ import com.exxus.questqr.model.Scan
 import com.exxus.questqr.model.ScanType
 import com.exxus.questqr.ui.theme.BaseDP
 import com.exxus.questqr.ui.theme.ElevationDP
-import com.exxus.questqr.ui.theme.SimpleScannerTheme
+import com.exxus.questqr.ui.theme.QuestQRTheme
 import com.exxus.questqr.ui.theme.SpaceDP
 
 @Composable
@@ -115,7 +115,7 @@ fun ScanSheet(
 @Preview("Scan sheet", showBackground = true)
 @Composable
 private fun ScanSheetPreview() {
-    SimpleScannerTheme {
+    QuestQRTheme {
         ScanSheet(
             scan = fakeScan.copy( scanType = ScanType.Url ),
             onShareClicked = {},

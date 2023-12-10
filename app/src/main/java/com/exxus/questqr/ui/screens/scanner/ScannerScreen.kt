@@ -193,7 +193,7 @@ private fun ScannerScreen(
 @Preview("Scanner screen", showBackground = true)
 @Composable
 private fun ScannerScreenPreview() {
-    SimpleScannerTheme {
+    QuestQRTheme {
         ScannerScreen(
             bottomSheetState = rememberModalBottomSheetState(initialValue = ModalBottomSheetValue.Hidden),
             uiState = ScannerUiState(),
