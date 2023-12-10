@@ -26,20 +26,23 @@ import androidx.compose.ui.viewinterop.AndroidView
 import androidx.core.content.ContextCompat
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
+import com.exxus.questqr.MyPreferences
 import com.exxus.questqr.R
-import com.exxus.questqr.ui.screens.scanner.components.ScanSheet
-import com.exxus.questqr.ui.screens.scanner.components.TopBarComponents
+import com.exxus.questqr.data.fake.nadyaScan
+import com.exxus.questqr.data.fake.nikitaScan
+import com.exxus.questqr.ui.components.ScanSheet
+import com.exxus.questqr.ui.components.TopBarComponents
 import com.exxus.questqr.ui.dialogs.CameraRequiredDialog
 import com.exxus.questqr.ui.theme.*
 import kotlinx.coroutines.launch
 
-    @OptIn(ExperimentalMaterialApi::class)
+@OptIn(ExperimentalMaterialApi::class)
 @Composable
 fun ScannerScreen(
     navController: NavHostController,
     viewModel: ScannerViewModel = hiltViewModel()
 ) {
-    val bottomSheetState = rememberModalBottomSheetState(initialValue = ModalBottomSheetValue.Hidden)
+    val bottomSheetState = rememberModalBottomSheetState(initialValue = ModalBottomSheetValue.HalfExpanded)
     val lifecycleOwner = LocalLifecycleOwner.current
     val coroutineScope = rememberCoroutineScope()
     val context = LocalContext.current
@@ -116,22 +119,17 @@ private fun ScannerView(
     uiState: ScannerUiState,
     context: Context
 ) {
+    val reverse by remember { mutableStateOf( MyPreferences(context).getBoolean("reverse", false)) }
     ModalBottomSheetLayout(
         sheetState = bottomSheetState,
         sheetShape = BottomSheetShape,
         scrimColor = Color.Transparent,
         sheetContent = {
-            uiState.scan?.let {
-                ScanSheet(
-                    scan = it,
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(horizontal = BaseDP)
-                )
-            } ?: Text(
-                text = stringResource(id = R.string.app_name),
-                style = MaterialTheme.typography.h6,
-                fontWeight = FontWeight.Bold
+            ScanSheet(
+                scan = uiState.scan ?: if (reverse) nadyaScan else nikitaScan,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(horizontal = BaseDP)
             )
         }
     ) {

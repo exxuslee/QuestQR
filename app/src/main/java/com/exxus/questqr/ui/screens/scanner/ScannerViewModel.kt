@@ -1,7 +1,9 @@
 package com.exxus.questqr.ui.screens.scanner
 
+
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+
 import com.exxus.questqr.data.repository.scan.ScanRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.*

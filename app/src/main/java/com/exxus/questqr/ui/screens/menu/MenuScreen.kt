@@ -37,7 +37,6 @@ fun MenuScreen(navController: NavHostController) {
             horizontalAlignment = Alignment.CenterHorizontally,
         ) {
             Text(text = "QR", modifier = Modifier.padding(48.dp))
-
             Button(onClick = {
                 val myPreferences = MyPreferences(context)
                 myPreferences.saveBoolean("reverse", true)
