@@ -80,6 +80,7 @@ class ScanLDS @Inject constructor(
                     } else {
                         scanStateFlow.value = Scan(
                             displayValue = "",
+                            displayPhoto = 0,
                             scanFormatId = R.string.scan_format_unknown,
                             ScanType.Text
                         )
@@ -146,6 +147,7 @@ class ScanLDS @Inject constructor(
                 cameraProvider.unbindAll()
                 scanStateFlow.value = Scan(
                     displayValue = "",
+                    displayPhoto = 0,
                     scanFormatId = R.string.scan_format_unknown,
                     ScanType.Text
                 )

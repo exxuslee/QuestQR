@@ -1,4 +1,4 @@
-package com.exxus.questqr.ui.components
+package com.exxus.questqr.ui.screens.scanner.components
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
@@ -44,8 +44,12 @@ fun ScanSheet(
                 elevation = ElevationDP,
                 modifier = Modifier.fillMaxWidth()
             ) {
+                val painter = painterResource(id = when (scan.displayPhoto) {
+                    1 -> R.drawable.ic_1
+                    else -> R.drawable.questqr
+                })
                 Image(
-                    painter = painterResource(id = R.drawable.ic_1) ,
+                    painter = painter,
                     contentDescription = null)
                 Text(
                     text = scan.displayValue,

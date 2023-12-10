@@ -4,6 +4,7 @@ import androidx.annotation.StringRes
 
 data class Scan(
     val displayValue: String,
+    val displayPhoto: Int,
     @StringRes val scanFormatId: Int,
     val scanType: ScanType
 )

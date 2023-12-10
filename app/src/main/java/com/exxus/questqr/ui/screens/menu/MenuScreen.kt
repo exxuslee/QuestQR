@@ -45,12 +45,6 @@ fun MenuScreen(navController: NavHostController) {
             }) {
                 Text(text = "Ni game")
             }
-
-            Button(onClick = {
-                navController.navigate(Screen.Result.route)
-            }) {
-                Text(text = "settings")
-            }
         }
     }
 }

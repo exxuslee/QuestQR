@@ -8,6 +8,7 @@ import com.exxus.questqr.model.ScanType
 fun Barcode.toScan(): Scan {
     return Scan(
         displayValue = displayValue ?: "",
+        displayPhoto = displayValue?.toInt()?:0,
         scanFormatId = when(format) {
             Barcode.FORMAT_QR_CODE -> R.string.scan_format_qr_code
             Barcode.FORMAT_AZTEC -> R.string.scan_format_aztec

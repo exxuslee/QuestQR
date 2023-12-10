@@ -27,8 +27,8 @@ import androidx.core.content.ContextCompat
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import com.exxus.questqr.R
-import com.exxus.questqr.ui.components.ScanSheet
-import com.exxus.questqr.ui.components.TopBarComponents
+import com.exxus.questqr.ui.screens.scanner.components.ScanSheet
+import com.exxus.questqr.ui.screens.scanner.components.TopBarComponents
 import com.exxus.questqr.ui.dialogs.CameraRequiredDialog
 import com.exxus.questqr.ui.theme.*
 import kotlinx.coroutines.launch
@@ -102,7 +102,7 @@ fun ScannerScreen(
         )
     }
 
-    ScannerScreen(
+    ScannerView(
         bottomSheetState = bottomSheetState,
         uiState = uiState,
         context = context
@@ -111,7 +111,7 @@ fun ScannerScreen(
 
 @OptIn(ExperimentalMaterialApi::class)
 @Composable
-private fun ScannerScreen(
+private fun ScannerView(
     bottomSheetState: ModalBottomSheetState,
     uiState: ScannerUiState,
     context: Context
@@ -171,7 +171,7 @@ private fun ScannerScreen(
 @Composable
 private fun ScannerScreenPreview() {
     QuestQRTheme {
-        ScannerScreen(
+        ScannerView(
             bottomSheetState = rememberModalBottomSheetState(initialValue = ModalBottomSheetValue.Hidden),
             uiState = ScannerUiState(),
             context = LocalContext.current

@@ -1,4 +1,4 @@
-package com.exxus.questqr.ui.components
+package com.exxus.questqr.ui.screens.scanner.components
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
