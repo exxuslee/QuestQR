@@ -52,35 +52,36 @@ fun ScanSheet(
             ) {
                 val myPreferences = MyPreferences(context)
                 val reverse = myPreferences.getBoolean("reverse", false)
-                val start = if (reverse) 23 else 0
+                val start = if (reverse) 24 else 0
                 Log.d("ScanSheet", start.toString())
 
-                val painter = painterResource(id = when (scan.displayPhoto) {
-                    abs(start - 1) -> R.drawable.ic_1
-                    abs(start - 2) -> R.drawable.ic_2
-                    abs(start - 3) -> R.drawable.ic_3
-                    abs(start - 4)-> R.drawable.ic_4
-                    abs(start - 5) -> R.drawable.ic_5
-                    abs(start - 6) -> R.drawable.ic_6
-                    abs(start - 7) -> R.drawable.ic_7
-                    abs(start - 8) -> R.drawable.ic_8
-                    abs(start - 9) -> R.drawable.ic_9
-                    abs(start - 10) -> R.drawable.ic_10
-                    abs(start - 11) -> R.drawable.ic_11
-                    abs(start - 12) -> R.drawable.ic_12
-                    abs(start - 13) -> R.drawable.ic_13
-                    abs(start - 14) -> R.drawable.ic_14
-                    abs(start - 15) -> R.drawable.ic_15
-                    abs(start - 16) -> R.drawable.ic_16
-                    abs(start - 17) -> R.drawable.ic_17
-                    abs(start - 18) -> R.drawable.ic_18
-                    abs(start - 19) -> R.drawable.ic_19
-                    abs(start - 20) -> R.drawable.ic_20
-                    abs(start - 21) -> R.drawable.ic_21
-                    abs(start - 22) -> R.drawable.ic_22
-                    abs(start - 23) -> R.drawable.ic_23
+                val painter = painterResource(id = when ( abs(start - scan.displayPhoto)) {
+                    1 -> R.drawable.ic_1
+                    2 -> R.drawable.ic_2
+                    3 -> R.drawable.ic_3
+                    4 -> R.drawable.ic_4
+                    5 -> R.drawable.ic_5
+                    6 -> R.drawable.ic_6
+                    7 -> R.drawable.ic_7
+                    8 -> R.drawable.ic_8
+                    9 -> R.drawable.ic_9
+                    10 -> R.drawable.ic_10
+                    11 -> R.drawable.ic_11
+                    12 -> R.drawable.ic_12
+                    13 -> R.drawable.ic_13
+                    14 -> R.drawable.ic_14
+                    15 -> R.drawable.ic_15
+                    16 -> R.drawable.ic_16
+                    17 -> R.drawable.ic_17
+                    18 -> R.drawable.ic_18
+                    19 -> R.drawable.ic_19
+                    20 -> R.drawable.ic_20
+                    21 -> R.drawable.ic_21
+                    22 -> R.drawable.ic_22
+                    23 -> R.drawable.ic_23
                     else -> R.drawable.questqr
-                })
+                }
+                )
                 Image(
                     painter = painter,
                     contentDescription = null)
