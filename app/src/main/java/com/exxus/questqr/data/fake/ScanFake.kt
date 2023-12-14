@@ -13,14 +13,14 @@ val fakeScan = Scan(
 
 val nadyaScan = Scan(
     displayValue = "Nadya",
-    displayPhoto = 1,
+    displayPhoto = 38,
     scanFormatId = R.string.scan_format_qr_code,
     scanType = ScanType.Text
 )
 
 val nikitaScan = Scan(
     displayValue = "Nikita",
-    displayPhoto = 1,
+    displayPhoto = 0,
     scanFormatId = R.string.scan_format_qr_code,
     scanType = ScanType.Text
 )

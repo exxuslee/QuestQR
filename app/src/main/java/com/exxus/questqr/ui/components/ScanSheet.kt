@@ -54,12 +54,13 @@ fun ScanSheet(
             ) {
                 val start by remember {
                     mutableStateOf(
-                        if (MyPreferences(context).getBoolean("reverse", false)) 24
-                        else 0
+                        if (MyPreferences(context).getBoolean("reverse", false)) -1
+                        else 1
                     )
                 }
                 val painter = painterResource(
-                    id = when (abs(start - scan.displayPhoto)) {
+                    id = when (abs(scan.displayPhoto + start)) {
+                        0 -> R.drawable.fin2
                         1 -> R.drawable.ic_1
                         2 -> R.drawable.ic_2
                         3 -> R.drawable.ic_3
@@ -83,6 +84,21 @@ fun ScanSheet(
                         21 -> R.drawable.ic_21
                         22 -> R.drawable.ic_22
                         23 -> R.drawable.ic_23
+                        24 -> R.drawable.ic_24
+                        25 -> R.drawable.ic_25
+                        26 -> R.drawable.ic_26
+                        27 -> R.drawable.ic_27
+                        28 -> R.drawable.ic_28
+                        29 -> R.drawable.ic_29
+                        30 -> R.drawable.ic_30
+                        31 -> R.drawable.ic_31
+                        32 -> R.drawable.ic_32
+                        33 -> R.drawable.ic_33
+                        34 -> R.drawable.ic_34
+                        35 -> R.drawable.ic_35
+                        36 -> R.drawable.ic_36
+                        37 -> R.drawable.ic_37
+                        38 -> R.drawable.fin1
                         else -> R.drawable.questqr
                     }
                 )
