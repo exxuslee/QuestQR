@@ -60,7 +60,7 @@ fun ScanSheet(
                 }
                 val painter = painterResource(
                     id = when (abs(scan.displayPhoto + start)) {
-                        0 -> R.drawable.fin2
+                        0 -> R.drawable.fin3
                         1 -> R.drawable.ic_1
                         2 -> R.drawable.ic_2
                         3 -> R.drawable.ic_3

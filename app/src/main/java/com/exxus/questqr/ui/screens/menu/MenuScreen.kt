@@ -1,5 +1,6 @@
 package com.exxus.questqr.ui.screens.menu
 
+import android.widget.Toast
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -24,6 +25,7 @@ import com.exxus.questqr.MyPreferences
 import com.exxus.questqr.R
 import com.exxus.questqr.ui.navigation.Screen
 import com.exxus.questqr.ui.theme.QuestQRTheme
+import java.time.Duration
 
 
 @Composable
@@ -47,9 +49,15 @@ fun MenuScreen(navController: NavHostController) {
             Button(
                 modifier = Modifier.padding(end = 164.dp),
                 onClick = {
-                    val myPreferences = MyPreferences(context)
-                    myPreferences.saveBoolean("reverse", true)
-                    navController.navigate(Screen.Scanner.route)
+                    if (System.currentTimeMillis() > 1703088000000) {
+                        val myPreferences = MyPreferences(context)
+                        myPreferences.saveBoolean("reverse", true)
+                        navController.navigate(Screen.Scanner.route)
+                    } else {
+                        Toast.makeText(context, "Время игр ещё не наступило", Toast.LENGTH_LONG)
+                            .show()
+                    }
+
                 }) {
                 Text(
                     text = "Nadiya",
@@ -60,9 +68,14 @@ fun MenuScreen(navController: NavHostController) {
             Button(
                 modifier = Modifier.padding(start = 164.dp),
                 onClick = {
-                    val myPreferences = MyPreferences(context)
-                    myPreferences.saveBoolean("reverse", false)
-                    navController.navigate(Screen.Scanner.route)
+                    if (System.currentTimeMillis() > 1703088000000) {
+                        val myPreferences = MyPreferences(context)
+                        myPreferences.saveBoolean("reverse", false)
+                        navController.navigate(Screen.Scanner.route)
+                    } else {
+                        Toast.makeText(context, "Время игр ещё не наступило", Toast.LENGTH_LONG)
+                            .show()
+                    }
                 }) {
                 Text(
                     text = "Nikita",
